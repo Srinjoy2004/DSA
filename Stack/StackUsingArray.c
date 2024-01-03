@@ -93,7 +93,7 @@ int main()
     // push(&st, 60);
     // printf("the popped element is %d \n", pop(&st));
     printf("the peeked element is %d \n", peek(st, 2));
-    // printf("the popped element is %d \n", pop(&st));
+    printf("the popped element is %d \n", pop(&st));
     // printf("the popped element is %d \n", pop(&st));
     display(st);
 
