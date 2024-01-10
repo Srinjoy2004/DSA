@@ -21,7 +21,7 @@ struct TreeNode *createNode(int data)
     return n;                                               // Finally returning the created node
 }
 
-// Helper function to validate BST.
+//  function to validate BST.
 bool validateBst(struct TreeNode *root, long min, long max)
 {
     if (root == NULL)
