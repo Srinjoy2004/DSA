@@ -18,24 +18,24 @@ struct node *createNode(int data)
     return n;                                       // Finally returning the created node
 }
 
-struct node *search(struct node *root, int key)
+struct node *searchIter(struct node *root, int key)
 {
-    if (root == NULL)
+    while (root != NULL)
     {
-        return NULL;
+        if (key == root->data)
+        {
+            return root;
+        }
+        else if (key < root->data)
+        {
+            root = root->left;
+        }
+        else
+        {
+            root = root->right;
+        }
     }
-    if (key == root->data)
-    {
-        return root;
-    }
-    else if (key < root->data)
-    {
-        return search(root->left, key);
-    }
-    else
-    {
-        return search(root->right, key);
-    }
+    return NULL;
 }
 
 int main()
@@ -60,7 +60,7 @@ int main()
     p1->left = p3;
     p1->right = p4;
 
-    struct node *n = search(p, 1);
+    struct node *n = searchIter(p, 16);
     if (n != NULL)
     {
         printf("Found: %d", n->data);
