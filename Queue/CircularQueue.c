@@ -53,7 +53,7 @@ int dequeue(struct queue *q)
 int main()
 {
     struct queue q;
-    create(&q, 5);
+    create(&q, 5);//in a circular queue of size n we can input max n-1 elements 
 
     enqueue(&q, 10);
     enqueue(&q, 20);
