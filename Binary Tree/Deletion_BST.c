@@ -129,7 +129,7 @@ int main()
           /	 \
         30	 70
         / \ / \
-    20 40 60 80 */
+   20  40 60   80 */
     struct Node *root = NULL;
     root = insert(root, 50);
     root = insert(root, 30);
