@@ -75,3 +75,5 @@ int main()
     return 0;
 }
 // merge sort
+// time O(nlogn)
+// space O(n)

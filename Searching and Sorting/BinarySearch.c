@@ -41,3 +41,5 @@ int main()
     }
     return 0;
 }
+// time O(logn)
+// space O(1)

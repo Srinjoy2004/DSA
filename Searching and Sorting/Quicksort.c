@@ -69,3 +69,5 @@ int main()
 
     return 0;
 }
+// tuime Best Case: O(n log n)
+// space O(log n)

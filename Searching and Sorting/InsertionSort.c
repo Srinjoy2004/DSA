@@ -38,3 +38,5 @@ int main()
     display(A, n);
     return 0;
 }
+// time O(n)
+// space O(1)
