@@ -5,7 +5,7 @@ void merge(int arr[], int low, int mid, int high)
 {
     int left = low;
     int right = mid + 1;
-    int *temp = (int *)malloc((high - low + 1) * sizeof(int));
+    int *temp = (int *)malloc((high + 1) * sizeof(int));
     int index = 0;
 
     while (left <= mid && right <= high)
@@ -42,7 +42,7 @@ void mergeSort(int arr[], int low, int high)
 {
     if (low < high)
     {
-        int mid = low + (high - low) / 2;
+        int mid = (low + high) / 2;
 
         mergeSort(arr, low, mid);
         mergeSort(arr, mid + 1, high);
