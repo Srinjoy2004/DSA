@@ -1,42 +1,49 @@
 #include <stdio.h>
-void display(int A[], int n)
+
+void insertionSort(int arr[], int n)
 {
-    for (int i = 0; i < n; i++)
+    int i, j, temp;
+    for (i = 0; i <= n - 1; i++)
     {
-        printf("%d ", A[i]);
+        j = i;
+        while (j > 0 && arr[j] < arr[j - 1])
+        {
+            // Swap elements directly without using a key variable
+            temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            j--;
+        }
     }
 }
-void insertion(int A[], int n)
+
+void printArray(int arr[], int size)
 {
-    int i, j, key;
-    for (i = 1; i < n; i++)
+    for (int i = 0; i < size; i++)
     {
-        key = A[i];
-        j = i - 1;
-        while (j >= 0 && A[j] > key)
-        {
-
-            int temp = A[j];
-            A[j] = A[j + 1];
-            A[j + 1] = temp;
-
-            // A[j + 1] = A[j];
-            // j--;
-        }
-        //  A[j + 1] = key;
+        printf("%d ", arr[i]);
     }
+    printf("\n");
 }
 
 int main()
 {
-    int A[] = {5, 9, 69, 1, 2, -100};
-    int n = sizeof(A) / sizeof(int);
-    // or  int n = sizeof(A) / sizeof(A[0]);
-    display(A, n);
-    insertion(A, n);
-    printf("\n");
-    display(A, n);
+    int arr[] = {12, 11, 13, 5, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Unsorted array: \n");
+    printArray(arr, n);
+
+    insertionSort(arr, n);
+
+    printf("Sorted array: \n");
+    printArray(arr, n);
+
     return 0;
 }
-// time O(n)
+
+// time
+// worst case ->O(n^2)
+// average case ->O(n^2)
+// best case ->O(n)
 // space O(1)
